@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine 🤍</title>
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: white; /* теперь белый фон */
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    background: white; /* белый блок */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* GIF */
+.gif {
+    width: 220px;
+    margin-bottom: 20px;
+}
+
+/* Text */
+h1 {
+    margin-bottom: 25px;
+    color: black; /* текст чёрный */
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Yes button */
+#yesBtn {
+    background: black;
+    color: white;
+}
+
+/* No button */
+#noBtn {
+    background: grey;
+    color: white;
+}
+
+video {
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="tenor-gif-embed" data-postid="604623961855748616" data-share-method="host" data-aspect-ratio="0.935743" data-width="100%"><a href="https://tenor.com/view/corazon-de-minion-minion-gif-604623961855748616">Corazon De Minion GIF</a>from <a href="https://tenor.com/search/corazon+de+minion-gifs">Corazon De Minion GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    <!-- Text -->
+    <h1>Ти будеш моєю Валентинкою?</h1>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button id="yesBtn">Так</button>
+        <button id="noBtn">Ні</button>
+    </div>
+
+</div>
+
+<script>
+
+let yesBtn = document.getElementById("yesBtn");
+let noBtn = document.getElementById("noBtn");
+
+let scale = 1;
+
+let noTexts = [
+    "Ні",
+    "Ти впевнена?",
+    "Точно?",
+    "Подумай ще 🥺",
+    "Натисни ТАК!"
+];
+
+let clickCount = 0;
+
+noBtn.addEventListener("click", () => {
+
+    // увеличиваем кнопку "Так"
+    scale += 0.25;
+    yesBtn.style.transform = `scale(${scale})`;
+
+    // меняем текст кнопки "Ні"
+    if (clickCount < noTexts.length - 1) {
+        clickCount++;
+        noBtn.textContent = noTexts[clickCount];
+    }
+});
+
+yesBtn.addEventListener("click", () => {
+    document.body.innerHTML = `
+        <div style="
+            height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            background:white;
+            font-family:Arial;
+            text-align:center;
+            padding:20px;
+        ">
+
+            <video controls autoplay>
+                <source src="IMG_1969.mov" type="video/mp4">
+            </video>
+
+            <h1 style="color:black; margin-top:20px;">
+                Я Кохаю тебе моя Солодка!!!
+            </h1>
+
+        </div>
+    `;
+});
+
+</script>
+
+</body>
+</html>
+
